@@ -5,7 +5,7 @@ var contagem = 30
 var tempo
     
 
-
+//ajustando a area que as moscas apareceram
 function ajusteArea(){
     altura = window.innerHeight
     largura = window.innerWidth
@@ -15,7 +15,7 @@ function ajusteArea(){
 
 ajusteArea()
 
-
+//criação do cronmetro e setando condição de vitoria
 var cronometro = setInterval(function(){
     contagem -= 1
     if(contagem<0){
@@ -32,7 +32,7 @@ var cronometro = setInterval(function(){
 
 
 
-
+//setando condição de derrota e difinindo aparição e remoção do elemento 'mosca'
 function posicaoRandom(){
 
     if(document.getElementById('mosca')){
@@ -49,13 +49,15 @@ function posicaoRandom(){
 
 }
 
+
 var posicaoY = Math.floor(Math.random() * altura) - 100
 var posicaoX = Math.floor(Math.random() * largura) - 100
 
+//não permitindo aparição do elemento em um local negativo 
 posicaoX = posicaoX < 0 ? 0 : posicaoX
 posicaoY = posicaoY < 0 ? 0 : posicaoY
 
-
+//criação do elemento
 var mosca = document.createElement('img')
 mosca.src = 'img/mosca.png'
 mosca.className = 'mosca1'
